@@ -47,7 +47,21 @@
 
     <a href="success.html" class="pay-btn">BAYAR SEKARANG</a>
 </div>
+<script>
+const orderBtn = document.getElementById('orderBtn');
 
+orderBtn.addEventListener('click', () => {
+    const nominal = document.getElementById('sumNominal').textContent;
+    const payment = document.getElementById('sumPay').textContent;
+    const game = "FF"; // ganti ML/FF sesuai halaman
+
+    const phone = "6287865845832"; // nomor admin, format internasional
+    const message = `Halo Admin, saya mau top up ${game} dengan nominal ${nominal} via ${payment}.`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    orderBtn.setAttribute("href", url);
+});
+</script>
 <script>
     const cards = document.querySelectorAll('.nominal-card');
     const pays = document.querySelectorAll('.pay-card');
