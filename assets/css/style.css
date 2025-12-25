@@ -1,0 +1,180 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #22c55e;
+}
+
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #020617;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.menu a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* TITLE */
+.section-title {
+    padding: 20px;
+}
+
+/* GRID GAME */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    padding: 0 20px 20px;
+}
+
+.game-card {
+    background-color: #020617;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    background-color: #22c55e;
+    color: black;
+}
+
+/* LOGO IMAGE */
+.logo-img {
+    height: 35px;
+}
+
+/* GAME IMAGE */
+.game-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* TOP UP FORM */
+.topup-box {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #020617;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.topup-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.topup-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.topup-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.topup-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #22c55e;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* NOMINAL */
+.nominal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nominal-card {
+    background-color: #020617;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #1e293b;
+}
+
+.nominal-card.active {
+    background-color: #22c55e;
+    color: black;
+    font-weight: bold;
+}
+
+/* PAYMENT */
+.pay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pay-card {
+    background-color: #020617;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #1e293b;
+}
+
+.pay-card img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.pay-card.active {
+    background-color: #22c55e;
+    color: black;
+    font-weight: bold;
+}
+
+/* SUCCESS */
+.success-box {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #020617;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.success-box h1 {
+    color: #22c55e;
+    margin-bottom: 10px;
+}

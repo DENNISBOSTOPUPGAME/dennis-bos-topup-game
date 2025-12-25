@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PUBG Mobile Top Up</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<h2>PUBG MOBILE TOP UP</h2>
+
+<form>
+    <label>Player ID</label>
+    <input type="text" placeholder="Masukkan Player ID">
+
+    <label>Pilih Nominal UC</label>
+    <div class="nominal-grid">
+        <div class="nominal-card active">60 UC</div>
+        <div class="nominal-card">180 UC</div>
+        <div class="nominal-card">325 UC</div>
+    </div>
+
+    <label>Pilih Pembayaran</label>
+    <div class="pay-grid">
+        <div class="pay-card active">
+            <img src="assets/img/dana.png">
+            <p>DANA</p>
+        </div>
+        <div class="pay-card">
+            <img src="assets/img/ovo.png">
+            <p>OVO</p>
+        </div>
+        <div class="pay-card">
+            <img src="assets/img/gopay.png">
+            <p>GOPAY</p>
+        </div>
+    </div>
+</form>
+
+<div class="summary">
+    <h3>Ringkasan Pesanan</h3>
+    <p><b>Game:</b> PUBG Mobile</p>
+    <p><b>Nominal:</b> <span id="sumNominal">60 UC</span></p>
+    <p><b>Pembayaran:</b> <span id="sumPay">DANA</span></p>
+
+    <a href="success.html" class="pay-btn">BAYAR SEKARANG</a>
+</div>
+
+<script>
+    const nomPUBG = document.querySelectorAll('.nominal-card');
+    const payPUBG = document.querySelectorAll('.pay-card');
+    const sumNom = document.getElementById('sumNominal');
+    const sumPay = document.getElementById('sumPay');
+
+    nomPUBG.forEach(card => {
+        card.addEventListener('click', () => {
+            nomPUBG.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            sumNom.textContent = card.textContent;
+        });
+    });
+
+    payPUBG.forEach(pay => {
+        pay.addEventListener('click', () => {
+            payPUBG.forEach(p => p.classList.remove('active'));
+            pay.classList.add('active');
+            sumPay.textContent = pay.textContent.trim();
+        });
+    });
+</script>
+
+</body>
+</html>

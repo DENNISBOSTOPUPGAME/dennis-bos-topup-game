@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free Fire Top Up</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<h2>FREE FIRE TOP UP</h2>
+
+<form>
+    <label>User ID</label>
+    <input type="text" placeholder="Masukkan Player ID">
+
+    <label>Pilih Nominal</label>
+    <div class="nominal-grid">
+        <div class="nominal-card active" data-price="9000">70 Diamonds</div>
+        <div class="nominal-card" data-price="19000">140 Diamonds</div>
+        <div class="nominal-card"data-price="49000">355 Diamonds</div>
+    </div>
+
+    <label>Pilih Pembayaran</label>
+    <div class="pay-grid">
+        <div class="pay-card active">
+            <img src="assets/img/dana.png">
+            <p>DANA</p>
+        </div>
+        <div class="pay-card">
+            <img src="assets/img/ovo.png">
+            <p>OVO</p>
+        </div>
+        <div class="pay-card">
+            <img src="assets/img/gopay.png">
+            <p>GOPAY</p>
+        </div>
+    </div>
+</form>
+
+<div class="summary">
+    <h3>Ringkasan Pesanan</h3>
+    <p><b>Game:</b> Free Fire</p>
+    <p><b>Nominal:</b> <span id="sumNominal">70 Diamonds</span></p>
+    <p><b>Harga:</b> Rp <span id="sumPrice">9.000</span></p>
+    <p><b>Admin:</b> Rp <span id="sumAdmin">2.000</span></p>
+    <p><b>Total:</b> Rp <span id="sumTotal">12.000</span></p>
+    <p><b>Pembayaran:</b> <span id="sumPay">DANA</span></p>
+
+    <a href="success.html" class="pay-btn">BAYAR SEKARANG</a>
+</div>
+
+<script>
+    const cards = document.querySelectorAll('.nominal-card');
+    const pays = document.querySelectorAll('.pay-card');
+
+    const sumNominal = document.getElementById('sumNominal');
+    const sumPrice = document.getElementById('sumPrice');
+    const sumAdmin = document.getElementById('sumAdmin');
+    const sumTotal = document.getElementById('sumTotal');
+    const sumPay = document.getElementById('sumPay');
+
+    let adminFee = 2000;
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            cards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+
+            const price = Number(card.dataset.price);
+
+            sumNominal.textContent = card.textContent;
+            sumPrice.textContent = price.toLocaleString();
+            sumAdmin.textContent = adminFee.toLocaleString();
+            sumTotal.textContent = (price + adminFee).toLocaleString();
+        });
+    });
+
+    pays.forEach(pay => {
+        pay.addEventListener('click', () => {
+            pays.forEach(p => p.classList.remove('active'));
+            pay.classList.add('active');
+            sumPay.textContent = pay.textContent.trim();
+        });
+    });
+</script>
+
+</body>
+</html>
